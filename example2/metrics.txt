@@ -1,0 +1,4 @@
+Max percentage humidity - maxhumidity - 93
+Max Temp in C - maxtempm - 16
+Min Temp in C - mintempm - 8
+Precipitation in mm - precipm - 6.35
