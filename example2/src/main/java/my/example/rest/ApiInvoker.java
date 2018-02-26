@@ -32,7 +32,6 @@ public class ApiInvoker {
     private ApiInvoker(String url) {
         this.url = url;
         restClientBuilder = new ResteasyClientBuilder();
-        restClientBuilder.defaultProxy("squid.eurodyn.com", 8080, "http");
         restClient = restClientBuilder.build();
         restClient.abortIfClosed();
     }
