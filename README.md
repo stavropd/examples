@@ -1,7 +1,7 @@
 Design Overview
 ================
 
-The java program "example2" consists of 3 components in order to achieve the required goal.
+The java program "example2" consists of 3 components in order to get the daily summary of New York for 2017/10/30 and output a file with some metrics.
 
 The 1st component makes the RESTfull call to the given URL and gets the response as a string. This component is implemented by the "ApiInvoker" class in "my.example.rest" package.
 
