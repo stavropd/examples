@@ -1,6 +1,0 @@
-my/example/response/ResponseHandler.class
-my/example/Main.class
-my/example/metrics/Metric.class
-my/example/rest/ApiInvoker.class
-my/example/response/JsonStructureNotFound.class
-my/example/output/FileEmitter.class
