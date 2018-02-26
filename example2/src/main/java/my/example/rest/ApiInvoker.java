@@ -11,7 +11,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 /**
- *
+ * Makes the RESTfull call to the given URL and gets the response as a string.
  * @author stavropd
  */
 public class ApiInvoker {
@@ -20,6 +20,11 @@ public class ApiInvoker {
     private final ResteasyClientBuilder restClientBuilder;
     private final ResteasyClient restClient;
 
+    /**
+     * Factory to construct the ApiInvoker.
+     * @param url the URL to make the call
+     * @return an ApiInvoker
+     */
     public static ApiInvoker factory(String url){
         return new ApiInvoker(url);
     }
@@ -32,6 +37,10 @@ public class ApiInvoker {
         restClient.abortIfClosed();
     }
     
+    /**
+     * Make the call to the REST service and read the response as string
+     * @return the string response
+     */
     public String callAndGetResponseAsString(){
         ResteasyWebTarget target = restClient.target(url);
         Response response = target.request().get();
