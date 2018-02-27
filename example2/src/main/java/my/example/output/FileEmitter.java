@@ -17,14 +17,15 @@ import my.example.metrics.Metric;
  * Takes a list of {@link Metric} and creates an output file with those metrics.
  * @author stavropd
  */
-public class FileEmitter {
+public class FileEmitter implements EmitterInt{
     
     /**
      * Emit an output file with the metrics as in the @param list.
      * @param list a list with the metrics
      * @param path the path of the output file
      */
-    public void writeToFile(List<Metric> list, String path){
+    @Override
+    public void emit(List<Metric> list, String path){
         try {
             Files.write(Paths.get(path), (Iterable<String>)list.stream().map(Object::toString)::iterator);
         } catch (IOException ex) {

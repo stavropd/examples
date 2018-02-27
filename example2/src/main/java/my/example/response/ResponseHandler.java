@@ -20,7 +20,7 @@ import my.example.metrics.Metric;
  * Reads the given response string and finds the required metrics in the Json response object
  * @author stavropd
  */
-public class ResponseHandler {
+public class ResponseHandler implements ResponseHandlerInt{
     
     private final JsonReader reader;
     
@@ -29,7 +29,7 @@ public class ResponseHandler {
      * @param response the Json string to read
      * @return a ResponseHandler instance
      */
-    public static ResponseHandler factory(String response){
+    public static ResponseHandlerInt factory(String response){
         return new ResponseHandler(response);
     }
 
@@ -43,6 +43,7 @@ public class ResponseHandler {
      * have a name as this is used to get the value from the Json response.
      * @return a list of the metrics that were read
      */
+    @Override
     public List<Metric> readMetrics(Metric ...metric){
         List<Metric> listOfMetrics = new ArrayList<>();
      
